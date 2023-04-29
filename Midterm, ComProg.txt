@@ -1,0 +1,18 @@
+while True:
+    number_str = input("Enter the original number: ")
+    original_base = int(input("Enter the base of the original number (2, 8, 10, or 16): "))
+
+    try:
+        # Parse the original number as an integer
+        number = int(number_str, original_base)
+
+        # Prompt the user for the desired base and convert the number
+        desired_base = int(input("Enter the desired base (2, 8, 10, or 16): "))
+        result = format(number, 'X' if desired_base == 16 else '')
+
+        # Display the result
+        print("Result: " + result)
+        break
+
+    except ValueError:
+        print("Invalid input, please try again.")
